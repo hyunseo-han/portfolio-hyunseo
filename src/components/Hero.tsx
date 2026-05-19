@@ -18,15 +18,16 @@ export default function Hero() {
           안녕하세요,
           <br />
           <span className="text-emerald-600">{typed}</span>
-          <span className="inline-block w-0.75 h-[0.9em] bg-emerald-600 ml-0.5 align-text-bottom animate-blink" />
+          <span className="inline-block w-0.75 h-[1em] bg-emerald-600 ml-0.5 align-middle animate-blink" />
         </h1>
       </FadeIn>
 
       <FadeIn delay={0.45}>
-        <p className="font-sora text-[17px] text-gray-500 mt-6 leading-relaxed">
-          사용자 경험을 깊이 고민하고 기술적 문제를 끈질기게 파고드는
-          개발자입니다. <br />
-          React와 Swift로 실제 서비스를 만들어왔습니다.
+        <p className="font-sora text-[17px] text-gray-600 leading-relaxed mb-10 max-w-2xl">
+          안 풀리는 문제 앞에서 더 흥미를 느끼는 프론트엔드 개발자입니다. <br />
+          팀과 함께 끝까지 완성도를 만들어왔고, 매일 새로운 것을 배우며 성장하고
+          있습니다. <br />
+          React와 TypeScript로 사용자에게 닿는 서비스를 만듭니다.
         </p>
       </FadeIn>
 

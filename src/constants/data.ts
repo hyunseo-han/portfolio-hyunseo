@@ -24,10 +24,10 @@ export const projects: Project[] = [
   {
     id: "finders",
     title: "Finders",
-    subtitle: "필름 카메라 암실 예약 플랫폼",
+    subtitle: "필름 카메라 현상소 통합 추천 서비스",
     tags: ["React 19", "TypeScript", "TanStack Query", "Zustand"],
     description:
-      "필름 카메라 사용자를 위한 암실 예약·결제 웹 플랫폼. UMC 9기 데모데이 최우수상 수상.",
+      "필름 유저들의 번거로운 현상소 탐색 과정을 간소화하는 현상소 통합 추천 서비스. UMC 9기 데모데이 최우수상 수상.",
     github: "https://github.com/Finders-Official/FE",
     problems: [
       {
@@ -50,10 +50,10 @@ export const projects: Project[] = [
   {
     id: "kiero",
     title: "Kiero",
-    subtitle: "iOS 아동 습관 관리 게이미피케이션 앱",
+    subtitle: "아동 습관 관리 게이미피케이션 앱",
     tags: ["Swift", "UIKit/SwiftUI", "MVVM", "Combine", "SSE"],
     description:
-      "아이들의 일정·습관 관리를 게이미피케이션으로 풀어낸 iOS 앱. 실시간 알림과 캐릭터 성장 시스템.",
+      "초등 자녀의 일정관리와 자기주도적 습관 형성을 돕는 게이미피케이션 기반 성장 플랫폼. SOPT 37기 앱잼 대상 수상.",
     github: "https://github.com/Team-Kiero/Kiero-iOS",
     problems: [
       {
@@ -77,25 +77,38 @@ export const projects: Project[] = [
     id: "umc-product",
     title: "UMC 프로덕트 팀",
     subtitle: "UMC 내부 도구 웹 플랫폼",
-    tags: ["React", "TypeScript", "TanStack Query", "Zustand", "Tailwind CSS", "React Hook Form"],
+    tags: [
+      "React",
+      "TypeScript",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind CSS",
+      "React Hook Form",
+    ],
     description:
       "UMC 내부 구성원들이 사용하는 데모데이 매칭 웹사이트 개발. 추후 리크루팅 페이지 등 내부 도구로 확장 예정.",
     github: "https://github.com/UMC-PRODUCT/umc-product-web-v2",
     problems: [
       {
         title: "계단식 서버 데이터 집계",
-        problem: "기수 -> 프로젝트 -> 지원자를 순차 조회한 뒤 통계와 매칭 현황까지 파생해야 하는 복합 의존성",
-        solution: "useMatchingStatusData 훅에서 enabled 옵션으로 쿼리를 체이닝하고, Promise.all 병렬 fetch 후 useMemo로 통계/매칭 블록을 파생",
+        problem:
+          "기수 → 프로젝트 → 지원자를 순차 조회한 뒤 통계와 매칭 현황까지 파생해야 하는 복합 의존성",
+        solution:
+          "useMatchingStatusData 훅에서 enabled 옵션으로 쿼리를 체이닝하고, Promise.all 병렬 fetch 후 useMemo로 통계/매칭 블록을 파생",
       },
       {
         title: "매칭 현황 데이터 변환",
-        problem: "서버의 flat한 지원자 목록을 역할별 블록 그리드(차수 태그, 빈칸, 차단)로 시각화해야 한다",
-        solution: "matchingStatusMapper에서 APPROVED 필터링 후 phase별 블록 변환, quota 대비 빈칸/차단 블록을 자동 생성하는 변환 레이어 구현",
+        problem:
+          "서버의 flat한 지원자 목록을 역할별 블록 그리드(차수 태그, 빈칸, 차단)로 시각화",
+        solution:
+          "matchingStatusMapper에서 APPROVED 필터링 후 phase별 블록 변환, quota 대비 빈칸/차단 블록을 자동 생성하는 변환 레이어 구현",
       },
       {
         title: "권한별 뷰 분기",
-        problem: "Admin/PM/Others 역할에 따라 같은 매칭 현황 페이지에서 데이터 범위와 UI가 달라져야 한다",
-        solution: "useViewModeStore의 mode를 기반으로 API 호출(전체 vs 내 프로젝트)과 UI 요소(지부 선택, 수동 배정 버튼)를 조건 분기",
+        problem:
+          "Admin/PM/Others 역할에 따라 같은 매칭 현황 페이지에서 데이터 범위와 UI 변화 필요",
+        solution:
+          "useViewModeStore의 mode를 기반으로 API 호출(전체 vs 내 프로젝트)과 UI 요소(지부 선택, 수동 배정 버튼)를 조건 분기",
       },
     ],
   },
@@ -128,9 +141,13 @@ export const skills: SkillGroup[] = [
 ];
 
 export const stats = [
-  { num: "2", label: "서비스 런칭 경험", desc: "Finders & Kiero" },
+  {
+    num: "3",
+    label: "엔드투엔드 팀 프로젝트",
+    desc: "Finders & Kiero & UMC Product",
+  },
   { num: "6+", label: "해결한 기술 이슈", desc: "Canvas, SSE, Auth 등" },
-  { num: "1st", label: "UMC 데모데이 수상", desc: "Finders 최우수상" },
+  { num: "2", label: "데모데이 수상", desc: "SOPT 앱잼 대상, UMC 최우수상" },
 ];
 
 export const contactLinks = [
