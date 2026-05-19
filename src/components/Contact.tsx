@@ -5,10 +5,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-8 md:px-[8vw] lg:px-30 bg-gray-50 border-t border-gray-200"
+      className="py-20 container-main border-b border-gray-100"
     >
       <FadeIn>
-        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-3">
+        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-2">
           Contact
         </p>
         <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">
@@ -27,7 +27,7 @@ export default function Contact() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sora text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-7 py-3.5 rounded-xl flex items-center gap-2 transition-all duration-200 hover:border-emerald-400 hover:text-emerald-700 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(5,150,105,0.15)]"
+              className="font-sora text-sm font-semibold text-gray-700 bg-white border border-gray-100 px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors duration-200 hover:border-emerald-300 hover:text-emerald-700"
             >
               <span>{link.icon}</span>
               {link.label}

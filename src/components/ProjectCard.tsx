@@ -10,13 +10,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div
-      className="bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(5,150,105,0.12)]"
+      className="bg-white border border-gray-100 rounded-lg overflow-hidden cursor-pointer transition-colors duration-300 hover:border-gray-300"
       onClick={() => setExpanded(!expanded)}
     >
-      {/* Accent bar */}
-      <div className="h-1.5 bg-linear-to-r from-emerald-600 to-emerald-400" />
-
-      <div className="p-7 md:px-8">
+      <div className="p-6 md:px-7">
         {/* Header */}
         <div className="flex justify-between items-start">
           <div>
@@ -60,7 +57,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="font-sora text-xs font-semibold text-emerald-700 border border-emerald-300 hover:bg-emerald-50 px-4 py-2 rounded-lg transition-colors"
+                className="font-sora text-xs font-semibold text-emerald-700 border border-emerald-300 hover:bg-emerald-50 px-4 py-2 rounded-md transition-colors"
               >
                 GitHub
               </a>
@@ -71,7 +68,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="font-sora text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-lg transition-colors"
+                className="font-sora text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-md transition-colors"
               >
                 Demo
               </a>
@@ -88,7 +85,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="pt-6 border-t border-gray-200">
+            <div className="pt-6 border-t border-gray-100">
               <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.06em] mb-4">
                 Technical Challenges
               </p>
@@ -97,7 +94,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {project.problems.map((p, i) => (
                   <div
                     key={i}
-                    className="bg-gray-50 rounded-xl p-5 border-l-[3px] border-emerald-400"
+                    className="bg-gray-50/60 rounded-lg p-5 border-l-2 border-emerald-500"
                   >
                     <p className="font-sora text-sm font-semibold text-gray-800 mb-3">
                       {p.title}

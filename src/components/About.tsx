@@ -5,10 +5,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 px-8 md:px-[8vw] lg:px-30 bg-gray-50 border-t border-gray-200"
+      className="py-20 container-main border-b border-gray-100"
     >
       <FadeIn>
-        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-3">
+        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-2">
           About
         </p>
         <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">

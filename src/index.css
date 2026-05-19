@@ -14,6 +14,10 @@
   .font-sora {
     font-family: "Sora", system-ui, sans-serif;
   }
+
+  .container-main {
+    @apply mx-auto w-full max-w-[860px] px-6;
+  }
 }
 
 @layer utilities {

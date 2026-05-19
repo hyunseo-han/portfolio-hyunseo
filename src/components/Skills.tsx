@@ -6,12 +6,12 @@ export default function Skills() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section id="skills" className="py-24 px-8 md:px-[8vw] lg:px-30">
+    <section id="skills" className="py-20 container-main">
       <FadeIn>
-        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-3">
+        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-2">
           Tech Stack
         </p>
-        <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-12">
+        <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-10">
           기술 스택
         </h2>
       </FadeIn>
@@ -23,10 +23,10 @@ export default function Skills() {
           return (
             <FadeIn key={group.category} delay={gi * 0.1}>
               <div
-                className={`rounded-2xl p-6 md:p-7 cursor-pointer transition-all duration-300 border ${
+                className={`rounded-lg p-5 md:p-6 cursor-pointer transition-all duration-300 border ${
                   isActive
-                    ? "bg-emerald-50 border-emerald-200"
-                    : "bg-gray-50 border-gray-200"
+                    ? "bg-emerald-50/50 border-emerald-200"
+                    : "bg-white border-gray-100"
                 }`}
                 onMouseEnter={() => setActive(group.category)}
                 onMouseLeave={() => setActive(null)}
@@ -43,10 +43,10 @@ export default function Skills() {
                   {group.items.map((item, ii) => (
                     <span
                       key={item}
-                      className={`font-sora text-[13px] font-medium px-3.5 py-1.5 rounded-full border transition-all duration-300 ${
+                      className={`font-sora text-[13px] font-medium px-3.5 py-1.5 rounded-md border transition-all duration-300 ${
                         isActive
                           ? "text-emerald-800 bg-emerald-100 border-emerald-200"
-                          : "text-gray-700 bg-white border-gray-200"
+                          : "text-gray-700 bg-white border-gray-100"
                       }`}
                       style={{ transitionDelay: `${ii * 30}ms` }}
                     >
