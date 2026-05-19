@@ -135,6 +135,7 @@ export const stats = [
 
 export const contactLinks = [
   { label: "GitHub", href: "https://github.com/hyunseo-han", icon: "🐈‍⬛" },
+  { label: "Blog", href: "https://velog.io/@hhs1210/posts", icon: "📝" },
   { label: "Email", href: "mailto:ols3040015@gmail.com", icon: "💌" },
 ];
 
