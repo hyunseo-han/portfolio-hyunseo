@@ -52,6 +52,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.description}
         </p>
 
+        {(project.github || project.demo) && (
+          <div className="flex gap-3 mt-4">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="font-sora text-xs font-semibold text-emerald-700 border border-emerald-300 hover:bg-emerald-50 px-4 py-2 rounded-lg transition-colors"
+              >
+                GitHub
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="font-sora text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-lg transition-colors"
+              >
+                Demo
+              </a>
+            )}
+          </div>
+        )}
+
         {/* Expanded case study */}
         <div
           className={`grid transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${
