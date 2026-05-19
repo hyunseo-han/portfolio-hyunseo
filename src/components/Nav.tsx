@@ -13,7 +13,7 @@ export default function Nav() {
       }`}
     >
       <span className="font-sora font-bold text-lg text-emerald-600 tracking-tight">
-        HS.
+        Hyunseo
       </span>
 
       <div className="flex gap-8">

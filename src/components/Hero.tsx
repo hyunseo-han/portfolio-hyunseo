@@ -24,7 +24,7 @@ export default function Hero() {
       </FadeIn>
 
       <FadeIn delay={0.25}>
-        <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight max-w-[600px]">
+        <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight max-w-150">
           안녕하세요,
           <br />
           <span className="text-emerald-600">{typed}</span>
@@ -33,9 +33,10 @@ export default function Hero() {
       </FadeIn>
 
       <FadeIn delay={0.45}>
-        <p className="font-sora text-[17px] text-gray-500 mt-6 leading-relaxed max-w-[480px]">
-          사용자 경험을 깊이 고민하고, 기술적 문제를 끈질기게 파고드는
-          개발자입니다. React와 Swift로 실제 서비스를 만들어왔습니다.
+        <p className="font-sora text-[17px] text-gray-500 mt-6 leading-relaxed max-w-175">
+          사용자 경험을 깊이 고민하고 기술적 문제를 끈질기게 파고드는
+          개발자입니다. <br />
+          React와 Swift로 실제 서비스를 만들어왔습니다.
         </p>
       </FadeIn>
 
