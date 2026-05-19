@@ -4,7 +4,7 @@ import { projects } from "../constants";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-8 md:px-[8vw] lg:px-[120px]">
+    <section id="projects" className="py-24 px-8 md:px-[8vw] lg:px-30">
       <FadeIn>
         <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-3">
           Projects

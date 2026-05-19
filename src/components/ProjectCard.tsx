@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       onClick={() => setExpanded(!expanded)}
     >
       {/* Accent bar */}
-      <div className="h-1.5 bg-gradient-to-r from-emerald-600 to-emerald-400" />
+      <div className="h-1.5 bg-linear-to-r from-emerald-600 to-emerald-400" />
 
       <div className="p-7 md:px-8">
         {/* Header */}

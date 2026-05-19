@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export function useTyping(texts: string[], speed = 60, pause = 1800) {
   const [display, setDisplay] = useState("");

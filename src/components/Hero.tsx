@@ -6,10 +6,10 @@ export default function Hero() {
   const typed = useTyping(typingTexts, 55, 1600);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-start px-8 md:px-[8vw] lg:px-[120px]">
+    <section className="relative min-h-screen flex flex-col justify-center items-start px-8 md:px-[8vw] lg:px-30">
       {/* Decorative dots */}
       <div
-        className="absolute top-[15%] right-[8%] w-[200px] h-[200px] opacity-50 hidden md:block"
+        className="absolute top-[15%] right-[8%] w-50 h-50 opacity-50 hidden md:block"
         style={{
           backgroundImage: "radial-gradient(#a7f3d0 1.5px, transparent 1.5px)",
           backgroundSize: "20px 20px",
@@ -28,7 +28,7 @@ export default function Hero() {
           안녕하세요,
           <br />
           <span className="text-emerald-600">{typed}</span>
-          <span className="inline-block w-[3px] h-[0.9em] bg-emerald-600 ml-0.5 align-text-bottom animate-blink" />
+          <span className="inline-block w-0.75 h-[0.9em] bg-emerald-600 ml-0.5 align-text-bottom animate-blink" />
         </h1>
       </FadeIn>
 
@@ -60,7 +60,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
         <span className="text-xs text-gray-400 font-sora">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-emerald-400 to-transparent" />
+        <div className="w-px h-8 bg-linear-to-b from-emerald-400 to-transparent" />
       </div>
     </section>
   );
