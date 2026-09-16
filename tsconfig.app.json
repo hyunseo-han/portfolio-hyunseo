@@ -22,7 +22,12 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* SEED Design */
+    "paths": {
+      "seed-design/*": ["./seed-design/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "seed-design"]
 }

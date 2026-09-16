@@ -1,37 +1,37 @@
 import { useState, useEffect, useRef } from "react";
 
 export function useTyping(texts: string[], speed = 60, pause = 1800) {
-  const [display, setDisplay] = useState("");
   const [lineIdx, setLineIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
+  const current = texts[lineIdx] ?? "";
+
   useEffect(() => {
     if (lineIdx >= texts.length) return;
 
-    const current = texts[lineIdx];
+    const line = texts[lineIdx];
     let timer: ReturnType<typeof setTimeout>;
 
-    if (!deleting) {
-      if (charIdx < current.length) {
-        timer = setTimeout(() => setCharIdx((c) => c + 1), speed);
-      } else if (lineIdx < texts.length - 1) {
-        timer = setTimeout(() => setDeleting(true), pause);
-      }
-    } else {
-      if (charIdx > 0) {
-        timer = setTimeout(() => setCharIdx((c) => c - 1), speed / 2);
-      } else {
-        setDeleting(false);
-        setLineIdx((l) => l + 1);
-      }
+    if (deleting) {
+      timer = setTimeout(() => {
+        if (charIdx > 0) {
+          setCharIdx((c) => c - 1);
+        } else {
+          setDeleting(false);
+          setLineIdx((l) => l + 1);
+        }
+      }, speed / 2);
+    } else if (charIdx < line.length) {
+      timer = setTimeout(() => setCharIdx((c) => c + 1), speed);
+    } else if (lineIdx < texts.length - 1) {
+      timer = setTimeout(() => setDeleting(true), pause);
     }
 
-    setDisplay(current.slice(0, charIdx));
     return () => clearTimeout(timer);
   }, [charIdx, deleting, lineIdx, texts, speed, pause]);
 
-  return display;
+  return current.slice(0, charIdx);
 }
 
 export function useInView(threshold = 0.15) {
