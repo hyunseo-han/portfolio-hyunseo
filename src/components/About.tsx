@@ -5,13 +5,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 container-main border-b border-gray-100"
+      className="py-20 container-main border-b border-stroke-neutral-muted"
     >
       <FadeIn>
-        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-2">
+        <p className="font-sora text-t3 font-semibold text-fg-brand uppercase tracking-[0.08em] mb-2">
           About
         </p>
-        <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+        <h2 className="font-sora text-t11 md:text-t12 font-bold text-fg-neutral tracking-tight mb-6">
           기술로 문제를 풀어내는 개발자
         </h2>
       </FadeIn>
@@ -20,13 +20,13 @@ export default function About() {
         {stats.map((stat, i) => (
           <FadeIn key={stat.label} delay={i * 0.1}>
             <div className="py-7">
-              <p className="font-sora text-4xl font-bold text-emerald-600 tracking-tight">
+              <p className="font-sora text-t12 font-bold text-fg-brand tracking-tight">
                 {stat.num}
               </p>
-              <p className="font-sora text-[15px] font-semibold text-gray-800 mt-2">
+              <p className="font-sora text-t5 font-semibold text-fg-neutral mt-2">
                 {stat.label}
               </p>
-              <p className="font-sora text-[13px] text-gray-500 mt-1">
+              <p className="font-sora text-t3 text-fg-neutral-subtle whitespace-pre-line mt-1">
                 {stat.desc}
               </p>
             </div>
