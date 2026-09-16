@@ -5,16 +5,16 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 container-main border-b border-gray-100"
+      className="py-20 container-main border-b border-stroke-neutral-muted"
     >
       <FadeIn>
-        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-2">
+        <p className="font-sora text-t3 font-semibold text-fg-brand uppercase tracking-[0.08em] mb-2">
           Contact
         </p>
-        <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">
+        <h2 className="font-sora text-t11 md:text-t12 font-bold text-fg-neutral tracking-tight mb-4">
           함께 일하고 싶으시다면
         </h2>
-        <p className="font-sora text-base text-gray-500 leading-relaxed max-w-120 mb-9">
+        <p className="font-sora text-t5 text-fg-neutral-subtle leading-relaxed max-w-120 mb-9">
           새로운 기회와 협업에 항상 열려 있습니다. 편하게 연락해주세요.
         </p>
       </FadeIn>
@@ -27,7 +27,7 @@ export default function Contact() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sora text-sm font-semibold text-gray-700 bg-white border border-gray-100 px-7 py-3.5 rounded-lg flex items-center gap-2 transition-colors duration-200 hover:border-emerald-300 hover:text-emerald-700"
+              className="font-sora text-t4 font-semibold text-fg-neutral-muted bg-bg-layer-default border border-stroke-neutral-muted px-7 py-3.5 rounded-r2 flex items-center gap-2 transition-colors duration-200 hover:border-stroke-brand-weak hover:text-fg-brand"
             >
               <span>{link.icon}</span>
               {link.label}

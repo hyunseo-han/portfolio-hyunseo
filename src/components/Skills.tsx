@@ -8,10 +8,10 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 container-main">
       <FadeIn>
-        <p className="font-sora text-[13px] font-semibold text-emerald-600 uppercase tracking-[0.08em] mb-2">
+        <p className="font-sora text-t3 font-semibold text-fg-brand uppercase tracking-[0.08em] mb-2">
           Tech Stack
         </p>
-        <h2 className="font-sora text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-10">
+        <h2 className="font-sora text-t11 md:text-t12 font-bold text-fg-neutral tracking-tight mb-10">
           기술 스택
         </h2>
       </FadeIn>
@@ -23,17 +23,17 @@ export default function Skills() {
           return (
             <FadeIn key={group.category} delay={gi * 0.1}>
               <div
-                className={`rounded-lg p-5 md:p-6 cursor-pointer transition-all duration-300 border ${
+                className={`rounded-r2 p-5 md:p-6 cursor-pointer transition-all duration-300 border ${
                   isActive
-                    ? "bg-emerald-50/50 border-emerald-200"
-                    : "bg-white border-gray-100"
+                    ? "bg-bg-brand-weak border-stroke-brand-weak"
+                    : "bg-bg-layer-default border-stroke-neutral-muted"
                 }`}
                 onMouseEnter={() => setActive(group.category)}
                 onMouseLeave={() => setActive(null)}
               >
                 <p
-                  className={`font-sora text-[13px] font-semibold uppercase tracking-[0.06em] mb-4 transition-colors duration-300 ${
-                    isActive ? "text-emerald-700" : "text-gray-500"
+                  className={`font-sora text-t3 font-semibold uppercase tracking-[0.06em] mb-4 transition-colors duration-300 ${
+                    isActive ? "text-fg-brand" : "text-fg-neutral-subtle"
                   }`}
                 >
                   {group.category}
@@ -43,10 +43,10 @@ export default function Skills() {
                   {group.items.map((item, ii) => (
                     <span
                       key={item}
-                      className={`font-sora text-[13px] font-medium px-3.5 py-1.5 rounded-md border transition-all duration-300 ${
+                      className={`font-sora text-t3 font-medium px-3.5 py-1.5 rounded-r1_5 border transition-all duration-300 ${
                         isActive
-                          ? "text-emerald-800 bg-emerald-100 border-emerald-200"
-                          : "text-gray-700 bg-white border-gray-100"
+                          ? "text-fg-brand bg-bg-brand-weak border-stroke-brand-weak"
+                          : "text-fg-neutral-muted bg-bg-layer-default border-stroke-neutral-muted"
                       }`}
                       style={{ transitionDelay: `${ii * 30}ms` }}
                     >
