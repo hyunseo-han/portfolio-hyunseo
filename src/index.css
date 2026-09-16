@@ -1,6 +1,135 @@
+@layer theme, base, seed-base, components, seed-components, utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap");
 
+@import "@seed-design/css/base.layered.css";
 @import "tailwindcss";
+@import "@seed-design/tailwind4-theme";
+
+/* SEED의 --font-size-*를 Tailwind v4의 --text-* 네임스페이스로 별칭 (text-t1 ~ text-t14) */
+@theme {
+  --text-t1: var(--seed-font-size-t1);
+  --text-t1--line-height: var(--seed-line-height-t1);
+  --text-t2: var(--seed-font-size-t2);
+  --text-t2--line-height: var(--seed-line-height-t2);
+  --text-t3: var(--seed-font-size-t3);
+  --text-t3--line-height: var(--seed-line-height-t3);
+  --text-t4: var(--seed-font-size-t4);
+  --text-t4--line-height: var(--seed-line-height-t4);
+  --text-t5: var(--seed-font-size-t5);
+  --text-t5--line-height: var(--seed-line-height-t5);
+  --text-t6: var(--seed-font-size-t6);
+  --text-t6--line-height: var(--seed-line-height-t6);
+  --text-t7: var(--seed-font-size-t7);
+  --text-t7--line-height: var(--seed-line-height-t7);
+  --text-t8: var(--seed-font-size-t8);
+  --text-t8--line-height: var(--seed-line-height-t8);
+  --text-t9: var(--seed-font-size-t9);
+  --text-t9--line-height: var(--seed-line-height-t9);
+  --text-t10: var(--seed-font-size-t10);
+  --text-t10--line-height: var(--seed-line-height-t10);
+  --text-t11: var(--seed-font-size-t11);
+  --text-t11--line-height: var(--seed-line-height-t11);
+  --text-t12: var(--seed-font-size-t12);
+  --text-t12--line-height: var(--seed-line-height-t12);
+  --text-t13: var(--seed-font-size-t13);
+  --text-t13--line-height: var(--seed-line-height-t13);
+  --text-t14: var(--seed-font-size-t14);
+  --text-t14--line-height: var(--seed-line-height-t14);
+}
+
+/* Toss TDS Mobile 팔레트로 SEED 원시 컬러를 덮어씀 (브랜드: carrot -> blue).
+   SEED 시맨틱 토큰이 전부 이 변수를 참조하므로 bg-bg-brand-solid 등이 자동으로 따라감.
+   @layer 밖이라 seed-base 레이어보다 우선한다. light 모드 값만 정의됨. */
+:root,
+:root[data-seed-color-mode="light-only"],
+:root[data-seed-color-mode="system"][data-seed-user-color-scheme="light"] {
+  --seed-color-palette-gray-00: #ffffff;
+
+  /* gray <- Toss grey */
+  --seed-color-palette-gray-100: #f9fafb; /* grey50 */
+  --seed-color-palette-gray-200: #f2f4f6; /* grey100 */
+  --seed-color-palette-gray-300: #e5e8eb; /* grey200 */
+  --seed-color-palette-gray-400: #d1d6db; /* grey300 */
+  --seed-color-palette-gray-500: #b0b8c1; /* grey400 */
+  --seed-color-palette-gray-600: #8b95a1; /* grey500 */
+  --seed-color-palette-gray-700: #6b7684; /* grey600 */
+  --seed-color-palette-gray-800: #4e5968; /* grey700 */
+  --seed-color-palette-gray-900: #333d4b; /* grey800 */
+  --seed-color-palette-gray-1000: #191f28; /* grey900 */
+
+  /* carrot <- Toss blue */
+  --seed-color-palette-carrot-100: #e8f3ff; /* blue50 */
+  --seed-color-palette-carrot-200: #c9e2ff; /* blue100 */
+  --seed-color-palette-carrot-300: #90c2ff; /* blue200 */
+  --seed-color-palette-carrot-400: #64a8ff; /* blue300 */
+  --seed-color-palette-carrot-500: #4593fc; /* blue400 */
+  --seed-color-palette-carrot-600: #3182f6; /* blue500 */
+  --seed-color-palette-carrot-700: #2272eb; /* blue600 */
+  --seed-color-palette-carrot-800: #1b64da; /* blue700 */
+  --seed-color-palette-carrot-900: #1957c2; /* blue800 */
+  --seed-color-palette-carrot-1000: #194aa6; /* blue900 */
+
+  /* blue <- Toss blue */
+  --seed-color-palette-blue-100: #e8f3ff; /* blue50 */
+  --seed-color-palette-blue-200: #c9e2ff; /* blue100 */
+  --seed-color-palette-blue-300: #90c2ff; /* blue200 */
+  --seed-color-palette-blue-400: #64a8ff; /* blue300 */
+  --seed-color-palette-blue-500: #4593fc; /* blue400 */
+  --seed-color-palette-blue-600: #3182f6; /* blue500 */
+  --seed-color-palette-blue-700: #2272eb; /* blue600 */
+  --seed-color-palette-blue-800: #1b64da; /* blue700 */
+  --seed-color-palette-blue-900: #1957c2; /* blue800 */
+  --seed-color-palette-blue-1000: #194aa6; /* blue900 */
+
+  /* red <- Toss red */
+  --seed-color-palette-red-100: #ffeeee; /* red50 */
+  --seed-color-palette-red-200: #ffd4d6; /* red100 */
+  --seed-color-palette-red-300: #feafb4; /* red200 */
+  --seed-color-palette-red-400: #fb8890; /* red300 */
+  --seed-color-palette-red-500: #f66570; /* red400 */
+  --seed-color-palette-red-600: #f04452; /* red500 */
+  --seed-color-palette-red-700: #e42939; /* red600 */
+  --seed-color-palette-red-800: #d22030; /* red700 */
+  --seed-color-palette-red-900: #bc1b2a; /* red800 */
+  --seed-color-palette-red-1000: #a51926; /* red900 */
+
+  /* green <- Toss green */
+  --seed-color-palette-green-100: #f0faf6; /* green50 */
+  --seed-color-palette-green-200: #aeefd5; /* green100 */
+  --seed-color-palette-green-300: #76e4b8; /* green200 */
+  --seed-color-palette-green-400: #3fd599; /* green300 */
+  --seed-color-palette-green-500: #15c47e; /* green400 */
+  --seed-color-palette-green-600: #03b26c; /* green500 */
+  --seed-color-palette-green-700: #02a262; /* green600 */
+  --seed-color-palette-green-800: #029359; /* green700 */
+  --seed-color-palette-green-900: #028450; /* green800 */
+  --seed-color-palette-green-1000: #027648; /* green900 */
+
+  /* yellow <- Toss yellow */
+  --seed-color-palette-yellow-100: #fff9e7; /* yellow50 */
+  --seed-color-palette-yellow-200: #ffefbf; /* yellow100 */
+  --seed-color-palette-yellow-300: #ffe69b; /* yellow200 */
+  --seed-color-palette-yellow-400: #ffdd78; /* yellow300 */
+  --seed-color-palette-yellow-500: #ffd158; /* yellow400 */
+  --seed-color-palette-yellow-600: #ffc342; /* yellow500 */
+  --seed-color-palette-yellow-700: #ffb331; /* yellow600 */
+  --seed-color-palette-yellow-800: #faa131; /* yellow700 */
+  --seed-color-palette-yellow-900: #ee8f11; /* yellow800 */
+  --seed-color-palette-yellow-1000: #dd7d02; /* yellow900 */
+
+  /* purple <- Toss purple */
+  --seed-color-palette-purple-100: #f9f0fc; /* purple50 */
+  --seed-color-palette-purple-200: #edccf8; /* purple100 */
+  --seed-color-palette-purple-300: #da9bef; /* purple200 */
+  --seed-color-palette-purple-400: #c770e4; /* purple300 */
+  --seed-color-palette-purple-500: #b44bd7; /* purple400 */
+  --seed-color-palette-purple-600: #a234c7; /* purple500 */
+  --seed-color-palette-purple-700: #9128b4; /* purple600 */
+  --seed-color-palette-purple-800: #8222a2; /* purple700 */
+  --seed-color-palette-purple-900: #73228e; /* purple800 */
+  --seed-color-palette-purple-1000: #65237b; /* purple900 */
+}
 
 @layer base {
   html {
@@ -8,7 +137,7 @@
   }
 
   body {
-    @apply bg-white antialiased overflow-x-hidden;
+    @apply bg-bg-layer-default antialiased overflow-x-hidden;
   }
 
   .font-sora {
