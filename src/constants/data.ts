@@ -21,7 +21,6 @@ export interface Project {
   period?: string;
   role?: string;
   caseStudies?: CaseStudy[];
-  github?: string;
   demo?: string;
 }
 
@@ -31,55 +30,6 @@ export interface SkillGroup {
 }
 
 export const projects: Project[] = [
-  {
-    id: "finders",
-    title: "필름카메라 유저를 위한 Finders",
-    subtitle: "현상소 탐색과 AI 사진 복원 하이브리드 앱",
-    tags: [
-      "React 19",
-      "TypeScript",
-      "Vite",
-      "TanStack Query",
-      "Zustand",
-      "Tailwind CSS v4",
-      "Capacitor 8",
-    ],
-    description:
-      "필름 카메라 사용자가 현상소를 탐색하고, AI로 사진을 복원하는 Capacitor 하이브리드 앱입니다. 동일 코드베이스를 iOS와 Android에 배포했습니다.",
-    period: "2025.12 - 진행 중 / 웹 프론트엔드 4인",
-    role: "메인 페이지 / AI 사진 복원 / Capacitor iOS 패키징",
-    github: "https://github.com/Finders-Official/FE",
-    problems: [],
-    caseStudies: [
-      {
-        title: "AI 사진 복원 기능",
-        purpose:
-          "사용자가 사진에서 지정한 영역만 AI로 복원하는 기능입니다. 손가락으로 그린 마스크가 실제 복원 영역과 정확히 일치하고, 진행 상황을 알 수 있도록 UI부터 비동기 플로우까지 담당했습니다.",
-        execution: [
-          "고해상도(DPR > 1) 기기에서 마스크가 어긋나는 문제를 devicePixelRatio 기준 스케일링으로 해결했습니다. 원본 이미지 해상도 기준 마스크 생성 과정에서는 object-contain 레터박스 여백을 변환 행렬 오프셋에 반영했습니다.",
-          "presigned 업로드 유틸을 복원 플로우에 통합하고, 복원 요청 - 폴링으로 진행률 갱신 - 완료 시 크레딧 잔액 캐시 무효화까지 구현했습니다. 화면 이탈 시 폴링과 blob URL을 정리했습니다.",
-        ],
-        results: [
-          "기기 해상도 및 이미지 종횡비와 무관하게 마스크와 복원 영역이 일치합니다.",
-          "iOS TestFlight 배포 버전에서 복원 기능이 정상 동작합니다.",
-        ],
-      },
-      {
-        title: "하이브리드 웹뷰 환경 대응",
-        purpose:
-          "하나의 코드베이스를 iOS, Android, 웹 세 플랫폼에 배포하면서 OS마다 다른 웹뷰 특유의 문제를 일관되게 해결했습니다.",
-        execution: [
-          "탭바 높이 CSS 변수에 OS 하단 safe-area-inset을 반영해 Android 내비게이션 바와 탭바 겹침을 실기기 검증으로 해결했습니다. FAB와 토스트도 같은 변수를 참조합니다.",
-          "Android OS 내비게이션 바, iOS 홈 인디케이터, Android 15 엣지-투-엣지에 대응했습니다.",
-          "웹뷰에서 앱처럼 느껴지도록 바운스 스크롤, 탭 하이라이트, 주소창 점프를 차단했습니다.",
-        ],
-        results: [
-          "iOS TestFlight, Google Play 내부 테스트, 웹 3종 동시 배포를 유지합니다.",
-          "레이아웃 상수를 CSS 변수 한 곳에 모아 이후 플랫폼 대응 수정이 단일 지점에서 끝납니다.",
-        ],
-      },
-    ],
-  },
   {
     id: "umc-product",
     title: "UMC Product",
@@ -95,8 +45,7 @@ export const projects: Project[] = [
     description:
       "지원 현황, 매칭 현황, 매칭 기간 설정과 소개 랜딩페이지를 개발하고 코드베이스 FSD 재구조화를 주도했습니다.",
     period: "2026.03 - 2026.08 / 웹 프론트엔드 4인",
-    role: "지원 현황 / 매칭 현황 / 매칭 기간 설정 페이지, 소개 랜딩페이지, 코드베이스 FSD 재구조화 주도",
-    github: "https://github.com/UMC-PRODUCT/umc-product-web-v2",
+    role: "지원 현황 / 매칭 현황 / 매칭 기간 설정 페이지, 소개 랜딩페이지,\n코드베이스 FSD 재구조화 주도",
     problems: [],
     caseStudies: [
       {
@@ -130,6 +79,54 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "finders",
+    title: "Finders",
+    subtitle: "필름카메라 유저를 위한 현상소 탐색과 AI 사진 복원 하이브리드 앱",
+    tags: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "TanStack Query",
+      "Zustand",
+      "Tailwind CSS v4",
+      "Capacitor 8",
+    ],
+    description:
+      "필름 카메라 사용자가 현상소를 탐색하고, AI로 사진을 복원하는 Capacitor 하이브리드 앱입니다.\n동일 코드베이스를 iOS와 Android에 배포했습니다.",
+    period: "2025.12 - 진행 중 / 웹 프론트엔드 4인",
+    role: "메인 페이지 / AI 사진 복원 / Capacitor iOS 패키징",
+    problems: [],
+    caseStudies: [
+      {
+        title: "AI 사진 복원 기능",
+        purpose:
+          "사용자가 사진에서 지정한 영역만 AI로 복원하는 기능입니다. 손가락으로 그린 마스크가 실제 복원 영역과 정확히 일치하고, 진행 상황을 알 수 있도록 UI부터 비동기 플로우까지 담당했습니다.",
+        execution: [
+          "고해상도(DPR > 1) 기기에서 마스크가 어긋나는 문제를 devicePixelRatio 기준 스케일링으로 해결했습니다. 원본 이미지 해상도 기준 마스크 생성 과정에서는 object-contain 레터박스 여백을 변환 행렬 오프셋에 반영했습니다.",
+          "presigned 업로드 유틸을 복원 플로우에 통합하고, 복원 요청 - 폴링으로 진행률 갱신 - 완료 시 크레딧 잔액 캐시 무효화까지 구현했습니다. 화면 이탈 시 폴링과 blob URL을 정리했습니다.",
+        ],
+        results: [
+          "기기 해상도 및 이미지 종횡비와 무관하게 마스크와 복원 영역이 일치합니다.",
+          "iOS TestFlight 배포 버전에서 복원 기능이 정상 동작합니다.",
+        ],
+      },
+      {
+        title: "하이브리드 웹뷰 환경 대응",
+        purpose:
+          "하나의 코드베이스를 iOS, Android, 웹 세 플랫폼에 배포하면서 OS마다 다른 웹뷰 특유의 문제를 일관되게 해결했습니다.",
+        execution: [
+          "탭바 높이 CSS 변수에 OS 하단 safe-area-inset을 반영해 Android 내비게이션 바와 탭바 겹침을 실기기 검증으로 해결했습니다. FAB와 토스트도 같은 변수를 참조합니다.",
+          "Android OS 내비게이션 바, iOS 홈 인디케이터, Android 15 엣지-투-엣지에 대응했습니다.",
+          "웹뷰에서 앱처럼 느껴지도록 바운스 스크롤, 탭 하이라이트, 주소창 점프를 차단했습니다.",
+        ],
+        results: [
+          "iOS TestFlight, Google Play 내부 테스트, 웹 3종 동시 배포를 유지합니다.",
+          "레이아웃 상수를 CSS 변수 한 곳에 모아 이후 플랫폼 대응 수정이 단일 지점에서 끝납니다.",
+        ],
+      },
+    ],
+  },
+  {
     id: "vitacheck",
     title: "VitaCheck",
     subtitle: "영양제 성분 정보와 조합 관리 웹 서비스",
@@ -140,9 +137,10 @@ export const projects: Project[] = [
       "GitHub Actions",
       "S3 + CloudFront",
     ],
-    description: "영양제 성분 정보를 확인하고 조합을 관리하는 웹 서비스입니다.",
+    description:
+      "자체·소셜 로그인, 웹푸시, PWA, 배포 파이프라인을 구현했습니다.",
     period: "2025.05 - 2026.01 / 웹 프론트엔드 5인",
-    role: "인증(자체 로그인, 소셜 로그인, 약관 동의), 웹푸시 알림, PWA, 배포 파이프라인",
+    role: "인증(자체 로그인, 소셜 로그인, 약관 동의), 웹푸시 알림,\nPWA, 배포 파이프라인",
     problems: [],
     caseStudies: [
       {
