@@ -45,7 +45,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <p className="font-sora text-t4 text-fg-neutral-muted leading-relaxed mt-4">
+        <p className="font-sora text-t4 text-fg-neutral-muted leading-relaxed whitespace-pre-line mt-4">
           {project.description}
         </p>
 
@@ -66,7 +66,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <dt className="font-sora font-semibold text-fg-neutral">
                   담당
                 </dt>
-                <dd className="font-sora text-fg-neutral-muted mt-1">
+                <dd className="font-sora text-fg-neutral-muted whitespace-pre-line mt-1">
                   {project.role}
                 </dd>
               </div>
@@ -74,30 +74,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </dl>
         )}
 
-        {(project.github || project.demo) && (
+        {project.demo && (
           <div className="flex gap-3 mt-4">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="font-sora text-t2 font-semibold text-[color:var(--seed-color-palette-blue-700)] border border-[color:var(--seed-color-palette-blue-400)] hover:bg-[color:var(--seed-color-palette-blue-100)] px-4 py-2 rounded-r1_5 transition-colors"
-              >
-                GitHub
-              </a>
-            )}
-            {project.demo && (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="font-sora text-t2 font-semibold text-palette-static-white bg-[color:var(--seed-color-palette-blue-600)] hover:bg-[color:var(--seed-color-palette-blue-700)] px-4 py-2 rounded-r1_5 transition-colors"
-              >
-                Demo
-              </a>
-            )}
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="font-sora text-t2 font-semibold text-palette-static-white bg-[color:var(--seed-color-palette-blue-600)] hover:bg-[color:var(--seed-color-palette-blue-700)] px-4 py-2 rounded-r1_5 transition-colors"
+            >
+              Demo
+            </a>
           </div>
         )}
 
@@ -112,7 +99,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="overflow-hidden">
             <div className="pt-6 border-t border-stroke-neutral-muted">
               {project.caseStudies ? (
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-10">
                   {project.caseStudies.map((study) => (
                     <article key={study.title}>
                       <p className="font-sora text-t4 font-semibold text-[color:var(--seed-color-palette-blue-1000)] mb-3">
