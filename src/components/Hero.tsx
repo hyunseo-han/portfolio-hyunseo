@@ -24,7 +24,7 @@ export default function Hero() {
 
       <FadeIn delay={0.45}>
         <p className="font-sora text-t6 text-fg-neutral-muted leading-relaxed mb-10 max-w-2xl">
-          안 풀리는 문제 앞에서 더 흥미를 느끼는 프론트엔드 개발자입니다. <br />
+          안 풀리는 문제 앞에서 더 흥미를 느끼는 개발자입니다. <br />
           팀과 함께 끝까지 완성도를 만들어왔고, 매일 새로운 것을 배우며 성장하고
           있습니다. <br />
           React와 TypeScript로 사용자에게 닿는 서비스를 만듭니다.

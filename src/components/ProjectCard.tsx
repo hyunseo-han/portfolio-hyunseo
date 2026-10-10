@@ -74,17 +74,31 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </dl>
         )}
 
-        {project.demo && (
-          <div className="flex gap-3 mt-4">
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="font-sora text-t2 font-semibold text-palette-static-white bg-[color:var(--seed-color-palette-blue-600)] hover:bg-[color:var(--seed-color-palette-blue-700)] px-4 py-2 rounded-r1_5 transition-colors"
-            >
-              Demo
-            </a>
+        {(project.demo || project.links?.length) && (
+          <div className="flex flex-wrap gap-3 mt-4">
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="font-sora text-t2 font-semibold text-palette-static-white bg-[color:var(--seed-color-palette-blue-600)] hover:bg-[color:var(--seed-color-palette-blue-700)] px-4 py-2 rounded-r1_5 transition-colors"
+              >
+                Demo
+              </a>
+            )}
+            {project.links?.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="font-sora text-t2 font-semibold text-palette-static-white bg-[color:var(--seed-color-palette-blue-600)] hover:bg-[color:var(--seed-color-palette-blue-700)] px-4 py-2 rounded-r1_5 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         )}
 
