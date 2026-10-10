@@ -22,6 +22,7 @@ export interface Project {
   role?: string;
   caseStudies?: CaseStudy[];
   demo?: string;
+  links?: { label: string; href: string }[];
 }
 
 export interface SkillGroup {
@@ -30,6 +31,48 @@ export interface SkillGroup {
 }
 
 export const projects: Project[] = [
+  {
+    id: "notalone-market",
+    title: "나 혼자 안 산다 (NotAlone Market)",
+    subtitle: "게시글부터 채팅과 거래 완료까지 연결한 공동구매 서비스",
+    tags: ["React", "Java", "Spring Boot", "Oracle", "MyBatis"],
+    description:
+      "React 화면과 Spring Boot API를 함께 개발했습니다. 게시글 작성, 채팅, 거래 완료, 구매 내역 확인이 이어지는 흐름을 구현했습니다.",
+    role: "게시글·채팅·구매 내역 API, 검색·이미지 업로드, React 화면 연동",
+    problems: [],
+    links: [
+      { label: "Backend GitHub", href: "https://github.com/NotAloneMarket/notalone-market-be" },
+      { label: "Frontend GitHub", href: "https://github.com/NotAloneMarket/notalone-market-fe" },
+    ],
+    caseStudies: [
+      {
+        title: "공동구매 거래 흐름 구현",
+        purpose:
+          "게시글 작성부터 채팅과 거래 완료, 구매 내역까지 이어지는 사용자 흐름이 필요했습니다.",
+        execution: [
+          "Spring Boot에서 게시글·채팅방·구매 내역 API를 개발하고 React 화면과 연결했습니다.",
+          "JWT/Spring Security 설정과 서버 응답 형식을 맞춰 로그인 후 거래 흐름을 점검했습니다.",
+        ],
+        results: [
+          "게시글 작성, 채팅, 거래 완료, 구매 내역 조회를 하나의 흐름으로 연결했습니다.",
+          "본인 명의로 백엔드 PR 22개, 프론트엔드 PR 33개를 병합했습니다.",
+        ],
+      },
+      {
+        title: "검색·이미지 업로드 API 개선",
+        purpose:
+          "화면의 검색 조건이 Oracle/MyBatis 조회 조건과 일치해야 했고, 게시글에 이미지를 첨부할 수 있어야 했습니다.",
+        execution: [
+          "카테고리 이름 대신 ID를 전달하도록 React 요청과 Spring Boot API를 수정하고, MyBatis 쿼리의 검색 조건을 정리했습니다.",
+          "Cloudinary 설정, 이미지 업로드 서비스와 게시글 API를 연결했습니다.",
+        ],
+        results: [
+          "검색 입력과 조회 결과의 불일치를 수정했습니다.",
+          "게시글 작성 시 이미지 첨부 흐름을 구현했습니다.",
+        ],
+      },
+    ],
+  },
   {
     id: "umc-product",
     title: "UMC Product",
@@ -47,6 +90,9 @@ export const projects: Project[] = [
     period: "2026.03 - 2026.08 / 웹 프론트엔드 4인",
     role: "지원 현황 / 매칭 현황 / 매칭 기간 설정 페이지, 소개 랜딩페이지,\n코드베이스 FSD 재구조화 주도",
     problems: [],
+    links: [
+      { label: "GitHub", href: "https://github.com/UMC-PRODUCT/umc-product-web-v2" },
+    ],
     caseStudies: [
       {
         title: "FSD 레이어 재구조화와 래칫 CI 게이트",
@@ -96,6 +142,9 @@ export const projects: Project[] = [
     period: "2025.12 - 진행 중 / 웹 프론트엔드 4인",
     role: "메인 페이지 / AI 사진 복원 / Capacitor iOS 패키징",
     problems: [],
+    links: [
+      { label: "GitHub", href: "https://github.com/hyunseo-han/Finders-Web" },
+    ],
     caseStudies: [
       {
         title: "AI 사진 복원 기능",
@@ -127,6 +176,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "kiero",
+    title: "Kiero",
+    subtitle: "초등학생의 일정 관리와 습관 형성을 돕는 iOS 앱",
+    tags: ["Swift", "UIKit", "MVVM", "Combine", "SSE"],
+    description:
+      "일정과 미션, 보상을 연결한 게이미피케이션 서비스입니다. iOS 앱에서 오늘의 여정과 실시간 알림, 금화 미션, 소원의 우물 기능을 맡았습니다.",
+    period: "2025.12 - 진행 중 / iOS 개발 4인",
+    role: "오늘의 여정(카메라), 알림(SSE), 금화 미션, 소원의 우물, 로그아웃",
+    problems: [],
+    links: [{ label: "GitHub", href: "https://github.com/hyunseo-han/Kiero-iOS" }],
+    caseStudies: [
+      {
+        title: "미션 수행과 알림·보상 기능",
+        purpose:
+          "사용자가 카메라로 미션을 인증하고 알림과 보상 기능을 이용할 수 있도록 iOS 화면과 데이터 흐름을 구현했습니다.",
+        execution: [
+          "오늘의 여정 카메라 화면과 미션 수행 흐름을 개발했습니다.",
+          "SSE 기반 알림과 금화 미션, 소원의 우물, 로그아웃 기능을 담당했습니다.",
+        ],
+        results: [
+          "오늘의 여정과 알림·보상 기능을 iOS 앱에 구현했습니다.",
+        ],
+      },
+    ],
+  },
+  {
     id: "vitacheck",
     title: "VitaCheck",
     subtitle: "영양제 성분 정보와 조합 관리 웹 서비스",
@@ -142,6 +217,9 @@ export const projects: Project[] = [
     period: "2025.05 - 2026.01 / 웹 프론트엔드 5인",
     role: "인증(자체 로그인, 소셜 로그인, 약관 동의), 웹푸시 알림,\nPWA, 배포 파이프라인",
     problems: [],
+    links: [
+      { label: "GitHub", href: "https://github.com/VitaCheck/vitacheck-fe" },
+    ],
     caseStudies: [
       {
         title: "iOS 웹푸시",
@@ -164,11 +242,36 @@ export const projects: Project[] = [
         execution: [
           "OAuth 콜백 처리와 토큰 저장을 구현하고, axios 응답 인터셉터로 만료된 토큰을 자동 재발급했습니다.",
           "소셜 로그인 후 부족한 정보를 채우는 추가 가입 폼과 약관 동의 단계를 구성했습니다.",
-          "GitHub Actions로 S3와 CloudFront 배포 워크플로를 구축하고 빌드 시점 환경변수를 시크릿으로 주입했습니다.",
+          "GitHub Actions로 Vite 빌드, S3 업로드, CloudFront 캐시 갱신을 자동화했습니다.",
         ],
         results: [
           "자체 경로와 소셜 경로가 하나의 가입 완료 지점으로 수렴합니다.",
           "인증 관련 파일과 배포 워크플로를 단독으로 담당했습니다.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "movielens",
+    title: "MovieLens 추천 모델 실험",
+    subtitle: "SVD와 KNN 추천 방식을 비교한 Machine Learning 학습 프로젝트",
+    tags: ["MovieLens", "SVD", "KNN", "RMSE"],
+    description:
+      "CSUSB 교환학생 Machine Learning 수업에서 데이터 전처리부터 추천 모델 평가까지 수행한 개인 학습 프로젝트입니다.",
+    role: "데이터 전처리, SVD·장르 기반 KNN 구현, RMSE 평가",
+    problems: [],
+    caseStudies: [
+      {
+        title: "개인화 추천 방식 비교",
+        purpose:
+          "MovieLens의 사용자 평점과 장르 정보로 개인화 추천 방식을 비교하고 평가 기준에 따라 결과를 해석했습니다.",
+        execution: [
+          "MovieLens 데이터를 전처리하고 SVD 협업 필터링과 장르 기반 KNN 추천 방식을 구현했습니다.",
+          "RMSE로 예측 성능을 비교하고 사용자별 추천 결과를 확인했습니다.",
+        ],
+        results: [
+          "전처리, 모델 구현, RMSE 평가까지 추천 시스템의 실험 흐름을 수행했습니다.",
+          "데이터 특성과 평가 기준이 추천 결과 해석에 미치는 영향을 정리했습니다.",
         ],
       },
     ],
@@ -203,9 +306,9 @@ export const skills: SkillGroup[] = [
 
 export const stats = [
   {
-    num: "3+",
+    num: "5+",
     label: "팀 프로젝트",
-    desc: "Finders, UMC Product, VitaCheck 등",
+    desc: "나 혼자 안 산다, UMC Product, Finders, Kiero, VitaCheck",
   },
   {
     num: "6+",
@@ -228,7 +331,7 @@ export const contactLinks = [
 export const navLinks = ["About", "Projects", "Skills", "Contact"];
 
 export const typingTexts = [
-  "프론트엔드 개발자",
+  "개발자",
   "주니어중에 실행력이 가장 빠른",
   "한현서입니다",
 ];
